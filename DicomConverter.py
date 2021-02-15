@@ -46,7 +46,7 @@ def main(argv):
       vols = os.listdir(SourcePath)
       vols_outcome = []
       if ImageType == 'PNG' :
-         for line in fileinput.input(codePath+'/PNG_convertion.txt',inplace=True):
+         for line in fileinput.input(codePath+'/PNG_conversion.txt',inplace=True):
             if 'path = "";' in line :
                line = line.replace(line, 'path = "' + codePath + '/listOutcome.txt";\n')
                codePath_ch = 'path = "' + codePath + '/listOutcome.txt";'
@@ -61,7 +61,7 @@ def main(argv):
             sys.stdout.write(line)
 
       elif ImageType =='JPEG' :
-         for line in fileinput.input(codePath+'/JPEG_convertion.txt',inplace=True) :
+         for line in fileinput.input(codePath+'/JPEG_conversion.txt',inplace=True) :
             if 'path = "";' in line :
                line = line.replace(line, 'path = "' + codePath + '/listOutcome.txt";\n')
                codePath_ch = 'path = "' + codePath + '/listOutcome.txt";'
@@ -114,7 +114,7 @@ def main(argv):
          os.system('/Applications/Fiji.app/Contents/MacOS/ImageJ-macosx --headless -macro ' + codePath + '/JPEG_convertion.txt')
 
       if ImageType == 'PNG':
-         for line in fileinput.input(codePath+'/PNG_convertion.txt', inplace=True):
+         for line in fileinput.input(codePath+'/PNG_conversion.txt', inplace=True):
             if codePath_ch in line:
                line = line.replace(line, 'path = "";\n')
             elif SourcePath_ch in line:
@@ -126,7 +126,7 @@ def main(argv):
             sys.stdout.write(line)
 
       elif ImageType == 'JPEG':
-         for line in fileinput.input(codePath+'/JPEG_convertion.txt', inplace=True):
+         for line in fileinput.input(codePath+'/JPEG_conversion.txt', inplace=True):
             if codePath_ch in line:
                line = line.replace(line, 'path = "";\n')
             elif SourcePath_ch in line:
