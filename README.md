@@ -17,6 +17,7 @@ we supposed you to use this Program when you need to train the deep learning mod
 ##Code Usage
 1. In terminal ,Go to the directory where the soucre code located
 2. Type the given terminal command
+
 DICOM Conversion
     
     python3 DicomConverter.py -i <InputVolumeDirectory> -o <OutputVolumeDirectory> -t <ConvertedImageType>
