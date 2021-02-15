@@ -32,7 +32,7 @@ NRRD Conversion
 
 4. If you need to handle the Lookup table. Find the right .txt file and change values.
    
-   SetMinandMax(a,b) // in ~_conversion.txt
+   SetMinandMax(a,b) // in ~_conversion.txt , a is min , b is max
    
 
 ------------------
