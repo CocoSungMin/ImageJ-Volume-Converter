@@ -3,7 +3,11 @@
 
 This python code uses ImageJ Fiji's Macro function to convert DICOM or NRRD files to JPEG , PNG format
 
-we supposed you to use this Program when you need to train the deep learning model for medical data
+We supposed you to use this Program when you need to train the deep learning model for medical data
+
+This Program supports Linux and OSX 
+
+Window Version will be updated soon
 
 ----------------------
 
