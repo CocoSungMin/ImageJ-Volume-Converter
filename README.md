@@ -14,7 +14,8 @@ we supposed you to use this Program when you need to train the deep learning mod
 4. Reset to default setting
 
 -------------------
-##Code Usage
+
+## Code Usage
 1. In terminal ,Go to the directory where the soucre code located
 2. Type the given terminal command
 
