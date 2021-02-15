@@ -109,9 +109,9 @@ def main(argv):
 
       #change the directory to user's ImageJ fiji installed directory
       if ImageType == 'PNG':
-         os.system('/Applications/Fiji.app/Contents/MacOS/ImageJ-macosx --headless -macro '+codePath+'/PNG_convertion.txt')
+         os.system('/Applications/Fiji.app/Contents/MacOS/ImageJ-macosx --headless -macro '+codePath+'/PNG_conversion.txt')
       elif ImageType == 'JPEG':
-         os.system('/Applications/Fiji.app/Contents/MacOS/ImageJ-macosx --headless -macro ' + codePath + '/JPEG_convertion.txt')
+         os.system('/Applications/Fiji.app/Contents/MacOS/ImageJ-macosx --headless -macro ' + codePath + '/JPEG_conversion.txt')
 
       if ImageType == 'PNG':
          for line in fileinput.input(codePath+'/PNG_conversion.txt', inplace=True):
