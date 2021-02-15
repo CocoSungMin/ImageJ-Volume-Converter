@@ -46,7 +46,7 @@ def main(argv):
       vols = os.listdir(SourcePath)
       vols_outcome = []
       if ImageType == 'PNG' :
-         for line in fileinput.input(codePath+'/NRRD_PNG_convertion.txt',inplace=True):
+         for line in fileinput.input(codePath+'/NRRD_PNG_conversion.txt',inplace=True):
             if 'path = "";' in line :
                line = line.replace(line, 'path = "' + codePath + '/listOutcome.txt";\n')
                codePath_ch = 'path = "' + codePath + '/listOutcome.txt";'
@@ -61,7 +61,7 @@ def main(argv):
             sys.stdout.write(line)
 
       elif ImageType =='JPEG' :
-         for line in fileinput.input(codePath+'/NRRD_JPEG_convertion.txt',inplace=True) :
+         for line in fileinput.input(codePath+'/NRRD_JPEG_conversion.txt',inplace=True) :
             if 'path = "";' in line :
                line = line.replace(line, 'path = "' + codePath + '/listOutcome.txt";\n')
                codePath_ch = 'path = "' + codePath + '/listOutcome.txt";'
@@ -109,12 +109,12 @@ def main(argv):
 
       #change the directory to user's ImageJ fiji installed directory
       if ImageType == 'PNG':
-         os.system('/Applications/Fiji.app/Contents/MacOS/ImageJ-macosx --headless -macro '+codePath+'/NRRD_PNG_convertion.txt')
+         os.system('/Applications/Fiji.app/Contents/MacOS/ImageJ-macosx --headless -macro '+codePath+'/NRRD_PNG_conversion.txt')
       elif ImageType == 'JPEG':
-         os.system('/Applications/Fiji.app/Contents/MacOS/ImageJ-macosx --headless -macro ' + codePath + '/NRRD_JPEG_convertion.txt')
+         os.system('/Applications/Fiji.app/Contents/MacOS/ImageJ-macosx --headless -macro ' + codePath + '/NRRD_JPEG_conversion.txt')
 
       if ImageType == 'PNG':
-         for line in fileinput.input(codePath+'/NRRD_PNG_convertion.txt', inplace=True):
+         for line in fileinput.input(codePath+'/NRRD_PNG_conversion.txt', inplace=True):
             if codePath_ch in line:
                line = line.replace(line, 'path = "";\n')
             elif SourcePath_ch in line:
@@ -126,7 +126,7 @@ def main(argv):
             sys.stdout.write(line)
 
       elif ImageType == 'JPEG':
-         for line in fileinput.input(codePath+'/NRRD_JPEG_convertion.txt', inplace=True):
+         for line in fileinput.input(codePath+'/NRRD_JPEG_conversion.txt', inplace=True):
             if codePath_ch in line:
                line = line.replace(line, 'path = "";\n')
             elif SourcePath_ch in line:
