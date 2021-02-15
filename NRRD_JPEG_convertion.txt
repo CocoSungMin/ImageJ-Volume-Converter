@@ -1,0 +1,33 @@
+//file list text file directory
+path = "";
+// Source file directory location
+SourcePath = "";
+//Converted file save location
+outputPath = "";
+
+
+filestring=File.openAsString(path);
+//print(filestring);
+
+rows = split(filestring,"\n");
+
+//scale every input
+for(i=0 ; i<rows.length ; i++){
+file = SourcePath+ rows[i] + " sort";
+
+//DICOM file load
+//run("Image Sequence...", "open=" +file);
+
+//nrrd format file load
+run("Nrrd ...","load="+file);
+
+//setMinAndMax(3,328);
+run("8-bit");
+run("RGB Color");
+print(rows[i]);
+print(outputPath+rows[i]);
+
+//PNG convertion 
+run("Image Sequence... ", "format=JPEG use save="+outputPath+rows[i]);
+close();
+}
